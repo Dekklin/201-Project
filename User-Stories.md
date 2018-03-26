@@ -53,5 +53,7 @@
 
 ### Shapes that appear on the screen are falling down the screen, disppearing when they reach the bottom.
 
-### A signal for adding score and subtracting score
+### A signal for adding score and subtracting score.
+
+### Make the game fit to screen size.
 
