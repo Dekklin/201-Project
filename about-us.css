@@ -1,0 +1,48 @@
+
+body{
+    background:linear-gradient(to right, #669999 20%, #00ffcc 92%);
+   };
+ 
+/* .section1 {
+display: inline;
+margin: 40em;
+padding: 30em;
+border: solid, grey;
+} */
+.section1 {
+display:inline;
+  /* padding: 0 3.3em;
+  line-height:70px; 
+  position: relative;
+  margin-right: 145px; */
+  
+}
+
+nav{
+    margin:100px 0px 10px 650px;
+   }
+   nav ul{
+    margin:0px;
+    padding:5px 0px 5px 30px;
+    list-style-type: none;
+   }
+   nav li{
+    display:inline-block;
+    margin-right:40px;
+   }
+   nav li a{
+    color:#ffffff;
+   }
+   nav li a:hover,nav li a.current{
+    color:#000000;
+   }
+   img {
+       width:300px;
+   }
+   #thanks {
+       text-align:center;
+   }
+   h1 {
+    font-family: 'Press Start 2P', cursive       
+   
+}
