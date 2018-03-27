@@ -76,6 +76,6 @@ function savePlayerToLocalStorage() {
 //
 onLoad();
 console.log(currentPlayer);
-=======
+
 //
 
