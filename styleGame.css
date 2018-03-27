@@ -8,8 +8,12 @@ body{
 
 img{
   position: relative;
-  margin:600px 0px 10px 150px;
-  width:200px;
+  /* margin:600px 0px 10px 150px; */
+  width: 200px;
   display:inline;
 
-  }
+}
+
+canvas {
+width: 100%;
+}
