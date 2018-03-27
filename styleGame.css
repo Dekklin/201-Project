@@ -27,8 +27,10 @@ nav li a{
 nav li a:hover,nav li a.current{
   color:#000000;
 }
-#username{
+#playerform{
   margin:50px 0px 0px 650px;
+  font-size: 20px;
+  box-sizing: border-box
 }
 #direction{
   margin:10px 0px 0px 650px;
@@ -46,6 +48,7 @@ div>ul{
   margin:10px 0px 0px 50px;
   line-height: 2em;
 }
+
 img{
   width:300px;
   margin:119px 0px 0px 650px;
@@ -69,3 +72,7 @@ img:hover {
   90% { transform: translate(1px, 2px) rotate(0deg); }
   100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
+#myCanvas{
+  float: right;
+ }
+ 
