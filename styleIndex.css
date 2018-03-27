@@ -1,0 +1,15 @@
+body{
+  background-image: url("Assets/skyandgrass.png" );
+  background-repeat: no-repeat;
+  border-left:45px solid brown;
+  border-right:45px solid brown;
+ 
+}
+
+img{
+  position: relative;
+  margin:600px 0px 10px 150px;
+  width:200px;
+  display:inline;
+
+  }
