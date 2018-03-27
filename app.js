@@ -2,9 +2,9 @@
 
 BuildPlayer.playerList = [];
 var currentPlayer = '';
+
 var playerForm = document.getElementById('playerform');
 playerForm.addEventListener('submit', handleSubmit);
-
 
 
 function onLoad() {
@@ -13,7 +13,6 @@ function onLoad() {
 
     if(retrievedPlayer && retrievedPlayer.length){
         BuildPlayer.playerList = retrievedPlayer;
-        //     alert('Welcome back ' + playerList[playerList.length-1].name + '!');
         return;
     // }
     }
@@ -22,6 +21,7 @@ function BuildPlayer (name) {
     this.name = name;
     this.highScore = 0;
     this.attempts = 0;
+    this.currentScore = 0;
     this.recent = [];
     console.log('player created');
     BuildPlayer.playerList.push(this);
@@ -59,7 +59,9 @@ function handleSubmit(event) {
 
 function savePlayerToLocalStorage() {
     // TODO: Save the cart to Local Storage
-    var playerData = JSON.stringify(BuildPlayer.playerList);
+    var playerData = JSON.stringify(BuildPlayer);
+    var currentPlayerData = JSON.stringify(currentPlayer);
+    localStorage.setItem( 'LocalCurrentPlayer' , currentPlayerData);
     localStorage.setItem( 'LocalPlayers', playerData);
 }
 
