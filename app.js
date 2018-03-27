@@ -1,4 +1,5 @@
 'use strict';
+
 BuildPlayer.playerList = [];
 var currentPlayer = '';
 var playerForm = document.getElementById('playerform');
@@ -26,6 +27,8 @@ function BuildPlayer (name) {
     BuildPlayer.playerList.push(this);
     //currentPlayer = this;
 }
+
+
 
 
 
@@ -69,6 +72,10 @@ function savePlayerToLocalStorage() {
 // if (userName) then display 'welcome back ____'.
 // If wrong user, allow option to create new user
 
+
 //
 onLoad();
 console.log(currentPlayer);
+=======
+//
+
