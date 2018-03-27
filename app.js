@@ -1,26 +1,30 @@
 'use strict';
-var playerList = [];
+BuildPlayer.playerList = [];
+var currentPlayer = '';
 var playerForm = document.getElementById('playerform');
 playerForm.addEventListener('submit', handleSubmit);
+
+
 
 function onLoad() {
     var playerDataString = localStorage.getItem('LocalPlayers');
     var retrievedPlayer = JSON.parse(playerDataString);
 
     if(retrievedPlayer && retrievedPlayer.length){
-        playerList = retrievedPlayer;
-        alert('Welcome back ' + playerList[playerList.length-1].name + '!');
+        BuildPlayer.playerList = retrievedPlayer;
+        //     alert('Welcome back ' + playerList[playerList.length-1].name + '!');
         return;
+    // }
     }
 }
-
-function buildPlayer (name) {
+function BuildPlayer (name) {
     this.name = name;
     this.highScore = 0;
     this.attempts = 0;
     this.recent = [];
     console.log('player created');
-    playerList.push(this);
+    BuildPlayer.playerList.push(this);
+    //currentPlayer = this;
 }
 
 
@@ -28,18 +32,31 @@ function buildPlayer (name) {
 // attach event listner to login submit button
 
 
-function handleSubmit() {
+function handleSubmit(event) {
     event.preventDefault();
-    var newPlayer = event.target.name.value;
-    new buildPlayer (newPlayer);
-    console.log('i am here');
-    savePlayerToLocalStorage();
+    var name = event.target.name.value;
+    var foundPlayer = false;
+    for (var i in BuildPlayer.playerList) {
+        if (BuildPlayer.playerList[i].name.includes(name)){
+            currentPlayer = BuildPlayer.playerList[i];
+            foundPlayer = true;
+            alert('Welcome Back ' + name);
+            console.log('i am here ' + currentPlayer.name);
 
+            break;
+        }
+    }
+    if (!foundPlayer){
+        new BuildPlayer (name);
+        currentPlayer = BuildPlayer.playerList[BuildPlayer.playerList.length-1];
+    }
+
+    savePlayerToLocalStorage();
 }
 
 function savePlayerToLocalStorage() {
     // TODO: Save the cart to Local Storage
-    var playerData = JSON.stringify(playerList);
+    var playerData = JSON.stringify(BuildPlayer.playerList);
     localStorage.setItem( 'LocalPlayers', playerData);
 }
 
@@ -54,3 +71,4 @@ function savePlayerToLocalStorage() {
 
 //
 onLoad();
+console.log(currentPlayer);
