@@ -1,11 +1,26 @@
 'use strict';
+
+// global variables
 var currentSelected = null;
+var shapes = [];
+
+
+
+// random shape function
+function randomShapes() {
+    var randomShapeSelector = ['square','circle','diamond','triangle'];
+    var k = Math.floor(Math.random()*randomShapeSelector.length);
+    console.log(randomShapeSelector[k]);
+    console.log('random shape: ' + k);
+    return randomShapeSelector[k];
+}
+
 // global function to use in random shape
 function randomColor(){
     var randomColorSelector = ['red','yellow','blue','green'];
     var k = Math.floor(Math.random()*randomColorSelector.length);
     console.log(randomColorSelector[k]);
-    console.log(k);
+    console.log('random color: ' + k);
     return randomColorSelector[k];
 
 }
@@ -21,25 +36,24 @@ function randomYCoordinate() {
     var randomY  = Math.random() * 115 + 10;
     return randomY;
 }
-var shapes = [];
+
 // make shape creator constructor function
 function Shape (){
     this.color = randomColor();
-    //this.shape =randomShape();
+    this.shape =randomShapes();
     this.x =randomXCoordinate();
     this.y = randomYCoordinate();
-    this.drawSquare();
+    this.drawShape();
     shapes.push(this);
 
 }
 var canvas = document.getElementById('shape');
 
-canvas.addEventListener('click', clickedOnSquare);
+canvas.addEventListener('click', clickedOnShape);
 
-function clickedOnSquare(event) {
-    // if(squareX - 15 < event.target.offSet && squareX +15 > event.targetX && squareY - 15 < event.targetY && squareY +15 > event.tY);
+function clickedOnShape(event) {
     for(var i in shapes){
-        if(((event.offsetX/3)>= shapes[i].x) && ((event.offsetX/3) <= shapes[i].x+15) && ((event.offsetY/3) >= shapes[i].y) && ((event.offsetY/3) <= shapes[i].y+15)){
+        if(((event.offsetX/3)>= shapes[i].x-2) && ((event.offsetX/3) <= shapes[i].x+17) && ((event.offsetY/3) >= shapes[i].y-8) && ((event.offsetY/3) <= shapes[i].y+23)){
             currentSelected = shapes[i];
             console.log('got it');
             console.log(currentSelected);
@@ -47,55 +61,42 @@ function clickedOnSquare(event) {
     }
     console.log(event.offsetX, event.offsetY);
 }
+Shape.prototype.drawShape = function(){
 
-Shape.prototype.drawSquare = function(){
 
-    var square = canvas.getContext('2d');
-    square.fillStyle = this.color;
-    square.fillRect(this.x, this.y, 15, 15);
+    var shapeCanvas = canvas.getContext('2d');
+
+    if (this.shape === 'square') {
+        shapeCanvas.fillStyle = this.color;
+        shapeCanvas.fillRect(this.x, this.y, 15, 15);
+    }
+    else if (this.shape === 'triangle'){
+        shapeCanvas.fillStyle = this.color;
+        shapeCanvas.beginPath();
+        shapeCanvas.moveTo(this.x, this.y);
+        shapeCanvas.lineTo(this.x + 15, this.y + 15);
+        shapeCanvas.lineTo(this.x+ 15, this.y - 15);
+        shapeCanvas.fill();
+    }
+    else if (this.shape === 'diamond') {
+        shapeCanvas.fillStyle = this.color;
+        shapeCanvas.beginPath();
+        shapeCanvas.moveTo(this.x, this.y +8);
+        shapeCanvas.lineTo(this.x + 10, this.y + 23);
+        shapeCanvas.lineTo(this.x + 20, this.y + 8);
+        shapeCanvas.lineTo(this.x + 10, this.y - 7);
+        // shapeCanvas.stroke();
+        shapeCanvas.fill();
+    }
+    else if (this.shape === 'circle') {
+
+        shapeCanvas.fillStyle = this.color;
+        shapeCanvas.beginPath();
+        shapeCanvas.arc(this.x, this.y, 10, 0, 2* Math.PI);
+        // shapeCanvas.stroke();
+        shapeCanvas.fill();
+    }
 };
-// square.stroke();
-console.log(shapes);
-
-Shape.prototype.drawTriangle=function(){
-    var triangle = canvas.getContext('2d');
-    triangle.fillStyle = this.color;
-    
-    triangle.beginPath();
-    triangle.moveTo(this.x, this.y);
-    triangle.lineTo(this.x + 15, this.y + 15);
-    triangle.lineTo(this.x+ 15, this.y - 15);
-    triangle.fillStyle = randomColor();
-    triangle.fill();
-};
-
-
-function drawDiamond() {
-    var canvas2 = document.getElementById('shape');
-    var diamond = canvas2.getContext('2d');
-    var diamondX = randomXCoordinate();
-    var diamondY = randomYCoordinate();
-
-    diamond.fillStyle = randomColor();
-    diamond.beginPath();
-    diamond.moveTo(diamondX, diamondY);
-    diamond.lineTo(diamondX + 10, diamondY + 15);
-    diamond.lineTo(diamondX + 20, diamondY);
-    diamond.lineTo(diamondX + 10, diamondY - 15);
-    // diamond.stroke();
-    diamond.fill();
-}
-
-function drawCircle() {
-    var canvas3 = document.getElementById('shape');
-    var circle = canvas3.getContext('2d');
-
-    circle.fillStyle = randomColor();
-    circle.beginPath();
-    circle.arc(randomXCoordinate(), randomYCoordinate(), 10, 0, 2* Math.PI);
-    // circle.stroke();
-    circle.fill();
-}
 
 // event listener on click
 
