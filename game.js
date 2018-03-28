@@ -51,32 +51,24 @@ function clickedOnSquare(event) {
 Shape.prototype.drawSquare = function(){
 
     var square = canvas.getContext('2d');
-
-
-
     square.fillStyle = this.color;
     square.fillRect(this.x, this.y, 15, 15);
 };
 // square.stroke();
 console.log(shapes);
 
-
-
-
-function drawTriangle() {
-    var canvas1 = document.getElementById('shape');
-    var triangle = canvas1.getContext('2d');
-    var triangleX = randomXCoordinate();
-    var triangleY = randomYCoordinate();
-
-    triangle.fillStyle = randomColor();
+Shape.prototype.drawTriangle=function(){
+    var triangle = canvas.getContext('2d');
+    triangle.fillStyle = this.color;
+    
     triangle.beginPath();
-    triangle.moveTo(triangleX, triangleY);
-    triangle.lineTo(triangleX + 15, triangleY + 15);
-    triangle.lineTo(triangleX + 15, triangleY - 15);
-    // triangle.stroke();
+    triangle.moveTo(this.x, this.y);
+    triangle.lineTo(this.x + 15, this.y + 15);
+    triangle.lineTo(this.x+ 15, this.y - 15);
+    triangle.fillStyle = randomColor();
     triangle.fill();
-}
+};
+
 
 function drawDiamond() {
     var canvas2 = document.getElementById('shape');
