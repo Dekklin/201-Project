@@ -1,21 +1,22 @@
 body{
   background-image: url("Assets/skyandgrass.png" );
   background-repeat: no-repeat;
-  border-left:45px solid brown;
-  border-right:45px solid brown;
+  border-left:10em solid brown;
+  border-right:10em solid brown;
  
-}
-
-img{
+ }
+ 
+ img{
   position: relative;
   /* margin:600px 0px 10px 150px; */
   width: 200px;
   display:inline;
-
-}
-
-canvas {
-width: 900px;
-height: 450px;
-border: 1px solid black;
-}
+ 
+ }
+ 
+ canvas {
+ width: 900px;
+ height: 450px;
+ border: 1px solid black;
+ margin-left:100px
+ }
