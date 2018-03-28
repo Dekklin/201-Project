@@ -1,71 +1,21 @@
 body{
-  background:linear-gradient(to right, #669999 20%, #00ffcc 92%);
-
-}
-h1{
-  text-align: center;
-  margin-top: 40px;
-  font-family: 'Press Start 2P', cursive;
-  font-size:50px;
+  background-image: url("Assets/skyandgrass.png" );
+  background-repeat: no-repeat;
+  border-left:45px solid brown;
+  border-right:45px solid brown;
+ 
 }
 
-nav{
-  margin:100px 0px 10px 610px;
-}
-nav ul{
-  margin:0px;
-  padding:5px 0px 5px 30px;
-  list-style-type: none;
-}
-nav li{
-  display:inline-block;
-  margin-right:40px;
-}
-nav li a{
-  color:#ffffff;
-}
-nav li a:hover,nav li a.current{
-  color:#000000;
-}
-#username{
-  margin:50px 0px 0px 650px;
-}
-#direction{
-  margin:10px 0px 0px 650px;
-  font-family: 'Permanent Marker', cursive;
-}
-h3{
-  font-size: 60px;
-}
-div {
-  background-image: url('Assets/list-bg.png');
-  margin: 7% 6% 14% -36%;
-
-}
-div>ul{
-  margin:10px 0px 0px 50px;
-  line-height: 2em;
-}
 img{
-  width:300px;
-  margin:119px 0px 0px 650px;
-}
-img:hover {
+  position: relative;
+  /* margin:600px 0px 10px 150px; */
+  width: 200px;
+  display:inline;
 
-  animation: shake 0.5s; 
-
-  animation-iteration-count: infinite; 
 }
-@keyframes shake {
-  0% { transform: translate(1px, 1px) rotate(0deg); }
-  10% { transform: translate(-1px, -2px) rotate(-1deg); }
-  20% { transform: translate(-3px, 0px) rotate(1deg); }
-  30% { transform: translate(3px, 2px) rotate(0deg); }
-  40% { transform: translate(1px, -1px) rotate(1deg); }
-  50% { transform: translate(-1px, 2px) rotate(-1deg); }
-  60% { transform: translate(-3px, 1px) rotate(0deg); }
-  70% { transform: translate(3px, 1px) rotate(-1deg); }
-  80% { transform: translate(-1px, -1px) rotate(1deg); }
-  90% { transform: translate(1px, 2px) rotate(0deg); }
-  100% { transform: translate(1px, -2px) rotate(-1deg); }
+
+canvas {
+width: 900px;
+height: 450px;
+border: 1px solid black;
 }

@@ -7,9 +7,12 @@
     <link rel="stylesheet" href="styleIndex.css">
   <link rel="stylesheet" href="styleGame.css">
     <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet"
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+   
   </head>
   <body>
+     
+       
 <nav>
   
 </nav>
@@ -23,14 +26,20 @@
 <li><a href ="score.html">Scores</a></li>
   </ul>
  </nav>
-
+ <canvas id="myCanvas" width="100" height="100">
+  </canvas> 
 <img src ="Assets/basket.png">
 
-<form id ="username">
-  <label for ="username" > </label>
-  <input type ="text" name="username"placeholder ="User Name">
-  <button>Play Game</button>
-</form>
+
+<form id ="playerform">
+    
+    <label>
+      <label for="name"></label>
+      <input type= "text" name= "name" placeholder="username" required>
+      
+      <button>New Player</button>
+    </label>
+  </form>
 
    
      
@@ -42,10 +51,15 @@
          <li>1</li>
          <li>2</li>
          <li>3</li>
+        <button>Play Game</button>
      </ul>
+
+   <script src = "app.js"></script>
+ 
     </div>
     </section>
-    
-   
   </body>
+   
+
+ 
 </html>
