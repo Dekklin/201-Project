@@ -8,12 +8,6 @@ body{
 display: inline-block;
 padding-right: 300px;
 }
-/* .section1 {
-display:inline; */
-  /* padding: 0 3.3em;
-  line-height:70px; 
-  position: relative;
-  margin-right: 145px; */
 
   h1 {
     font-family: 'Press Start 2P', cursive;     
@@ -22,8 +16,7 @@ display:inline; */
     padding-top: 150px;
 }
 #star {
-    /* position:relative;
-    top:7px; */
+   /
     padding: 5px 5px 100px 10px;
     
 }
@@ -58,7 +51,6 @@ nav{
     border: 2px double black;
     padding-right: 150px;
     padding-left: 250px;
-    /* margin: 2px; */
     
 }
 #picture2 {
