@@ -1,5 +1,5 @@
 'use strict';
-
+var currentSelected = null;
 // global function to use in random shape
 function randomColor(){
     var randomColorSelector = ['red','yellow','blue','green'];
@@ -13,30 +13,55 @@ function randomColor(){
 // random number generator for X axis
 function randomXCoordinate() {
     var randomX  = Math.random() * 265 + 10;
-    console.log(randomX);
     return randomX;
 }
 
 // random number for Y axis
 function randomYCoordinate() {
     var randomY  = Math.random() * 115 + 10;
-    console.log(randomY);
     return randomY;
 }
+var shapes = [];
 // make shape creator constructor function
-
-
-// make shape spawn function
-
-function drawSquare() {
-    var canvas = document.getElementById('shape');
-    var square = canvas.getContext('2d');
-
-    square.fillStyle = randomColor();
-    square.fillRect(randomXCoordinate(), randomYCoordinate(), 15, 15);
-    // square.stroke();
+function Shape (){
+    this.color = randomColor();
+    //this.shape =randomShape();
+    this.x =randomXCoordinate();
+    this.y = randomYCoordinate();
+    this.drawSquare();
+    shapes.push(this);
 
 }
+var canvas = document.getElementById('shape');
+
+canvas.addEventListener('click', clickedOnSquare);
+
+function clickedOnSquare(event) {
+    // if(squareX - 15 < event.target.offSet && squareX +15 > event.targetX && squareY - 15 < event.targetY && squareY +15 > event.tY);
+    for(var i in shapes){
+        if(((event.offsetX/3)>= shapes[i].x) && ((event.offsetX/3) <= shapes[i].x+15) && ((event.offsetY/3) >= shapes[i].y) && ((event.offsetY/3) <= shapes[i].y+15)){
+            currentSelected = shapes[i];
+            console.log('got it');
+            console.log(currentSelected);
+        }
+    }
+    console.log(event.offsetX, event.offsetY);
+}
+
+Shape.prototype.drawSquare = function(){
+
+    var square = canvas.getContext('2d');
+
+
+
+    square.fillStyle = this.color;
+    square.fillRect(this.x, this.y, 15, 15);
+};
+// square.stroke();
+console.log(shapes);
+
+
+
 
 function drawTriangle() {
     var canvas1 = document.getElementById('shape');
@@ -81,6 +106,8 @@ function drawCircle() {
 }
 
 // event listener on click
+
+
 // track score
 
 // create var to hold current shape
@@ -90,7 +117,9 @@ function drawCircle() {
 
 
 
-drawSquare();
-drawTriangle();
-drawDiamond();
-drawCircle();
+// drawSquare();
+// drawTriangle();
+// drawDiamond();
+// drawCircle();
+new Shape();
+

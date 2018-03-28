@@ -15,5 +15,7 @@ img{
 }
 
 canvas {
-width: 100%;
+width: 900px;
+height: 450px;
+border: 1px solid black;
 }
