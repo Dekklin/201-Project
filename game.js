@@ -48,6 +48,7 @@ function Shape (){
 
 }
 var canvas = document.getElementById('shape');
+var shapeCanvas = canvas.getContext('2d');
 
 canvas.addEventListener('click', clickedOnShape);
 
@@ -55,6 +56,11 @@ function clickedOnShape(event) {
     for(var i in shapes){
         if(((event.offsetX/3)>= shapes[i].x-2) && ((event.offsetX/3) <= shapes[i].x+17) && ((event.offsetY/3) >= shapes[i].y-8) && ((event.offsetY/3) <= shapes[i].y+23)){
             currentSelected = shapes[i];
+            shapeCanvas.clearRect(0,0,900,450);
+            shapes.splice(i, 1);
+            for (var j in shapes){
+                shapes[j].drawShape();
+            }
             console.log('got it');
             console.log(currentSelected);
         }
@@ -64,7 +70,7 @@ function clickedOnShape(event) {
 Shape.prototype.drawShape = function(){
 
 
-    var shapeCanvas = canvas.getContext('2d');
+    // var shapeCanvas = canvas.getContext('2d');
 
     if (this.shape === 'square') {
         shapeCanvas.fillStyle = this.color;
@@ -114,5 +120,7 @@ Shape.prototype.drawShape = function(){
 // drawTriangle();
 // drawDiamond();
 // drawCircle();
+new Shape();
+new Shape();
 new Shape();
 
