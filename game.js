@@ -10,8 +10,6 @@ var shapes = [];
 function randomShapes() {
     var randomShapeSelector = ['square','circle','diamond','triangle'];
     var k = Math.floor(Math.random()*randomShapeSelector.length);
-    console.log(randomShapeSelector[k]);
-    console.log('random shape: ' + k);
     return randomShapeSelector[k];
 }
 
@@ -19,8 +17,6 @@ function randomShapes() {
 function randomColor(){
     var randomColorSelector = ['red','yellow','blue','green'];
     var k = Math.floor(Math.random()*randomColorSelector.length);
-    console.log(randomColorSelector[k]);
-    console.log('random color: ' + k);
     return randomColorSelector[k];
 
 }
@@ -67,8 +63,8 @@ function clickedOnShape(event) {
     }
     console.log(event.offsetX, event.offsetY);
 }
-Shape.prototype.drawShape = function(){
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 Shape.prototype.drawSquare = function(){
 
@@ -119,6 +115,31 @@ function drawCircle() {
     circle.fill();
 }
 =======
+=======
+// make constructor function for bucket image generator
+var bucketArray = [];
+
+function Bucket (src, shape) {
+    this.src = src;
+    this.shape = shape;
+    bucketArray.push(this);
+}
+
+new Bucket ('Assets/square.png', 'square');
+new Bucket ('Assets/triangle.png', 'triangle');
+new Bucket ('Assets/diamond.png', 'diamond');
+new Bucket ('Assets/circle.png', 'circle');
+
+var bucketImg = document.getElementById('basket1');
+bucketImg.src = bucketArray[i].src;
+
+function randomPosition (){
+    var position1;
+}
+
+
+Shape.prototype.drawShape = function(){
+>>>>>>> 229833cc0156a456f3660bb299c54fe5914b0691
 
     // var shapeCanvas = canvas.getContext('2d');
 
