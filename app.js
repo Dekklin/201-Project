@@ -11,13 +11,13 @@ function onLoad() {
     var playerDataString = localStorage.getItem('LocalPlayers');
     var retrievedPlayer = JSON.parse(playerDataString);
 
-    if(retrievedPlayer && retrievedPlayer.length){
+    if (retrievedPlayer && retrievedPlayer.length) {
         BuildPlayer.playerList = retrievedPlayer;
         return;
-    // }
+        // }
     }
 }
-function BuildPlayer (name) {
+function BuildPlayer(name) {
     this.name = name;
     this.highScore = 0;
     this.attempts = 0;
@@ -40,7 +40,7 @@ function handleSubmit(event) {
     var name = event.target.name.value;
     var foundPlayer = false;
     for (var i in BuildPlayer.playerList) {
-        if (BuildPlayer.playerList[i].name.includes(name)){
+        if (BuildPlayer.playerList[i].name.includes(name)) {
             currentPlayer = BuildPlayer.playerList[i];
             foundPlayer = true;
             alert('Welcome Back ' + name);
@@ -49,9 +49,9 @@ function handleSubmit(event) {
             break;
         }
     }
-    if (!foundPlayer){
-        new BuildPlayer (name);
-        currentPlayer = BuildPlayer.playerList[BuildPlayer.playerList.length-1];
+    if (!foundPlayer) {
+        new BuildPlayer(name);
+        currentPlayer = BuildPlayer.playerList[BuildPlayer.playerList.length - 1];
     }
 
     savePlayerToLocalStorage();
@@ -61,8 +61,8 @@ function savePlayerToLocalStorage() {
     // TODO: Save the cart to Local Storage
     var playerData = JSON.stringify(BuildPlayer);
     var currentPlayerData = JSON.stringify(currentPlayer);
-    localStorage.setItem( 'LocalCurrentPlayer' , currentPlayerData);
-    localStorage.setItem( 'LocalPlayers', playerData);
+    localStorage.setItem('LocalCurrentPlayer', currentPlayerData);
+    localStorage.setItem('LocalPlayers', playerData);
 }
 
 
