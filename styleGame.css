@@ -9,10 +9,12 @@ body{
  img{
   position: relative;
   /* margin:600px 0px 10px 150px; */
-  width: 200px;
+  width:200px;
   display:inline;
- 
- }
+  padding-top:150px;
+  margin:20px 20px 0px 50px
+}
+
  
  canvas {
  width: 900px;
