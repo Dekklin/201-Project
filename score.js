@@ -1,6 +1,6 @@
 'use strict';
-var currentPlayer = 0;
-var playerData = 0;
+var currentPlayer = null;
+var playerData = null;
 var orderAttempts = document.getElementById('displayAttempts');
 function retrieveLocalStorage() {
     var playerDataString = localStorage.getItem('LocalPlayers');

@@ -3,8 +3,20 @@
 // global variables
 var currentSelected = null;
 var shapes = [];
+var scoreCount = 0;
+console.log('score count: ' + scoreCount);
 
+// retrive from local storage the current player
+function playerOnLoad() {
+    var playerDataString = localStorage.getItem('LocalPlayers');
+    var retrievedPlayer = JSON.parse(playerDataString);
+    if(retrievedPlayer && retrievedPlayer.length){
 
+        console.log (retrievedPlayer);
+        return;
+    }
+}
+playerOnLoad();
 
 // random shape function
 function randomShapes() {
@@ -52,9 +64,9 @@ function clickedOnShape(event) {
     for(var i in shapes){
         if(((event.offsetX/3)>= shapes[i].x-2) && ((event.offsetX/3) <= shapes[i].x+17) && ((event.offsetY/3) >= shapes[i].y-8) && ((event.offsetY/3) <= shapes[i].y+23)){
             currentSelected = shapes[i];
-            
+
             shapes.splice(i, 1);
-           
+
             console.log('got it');
             console.log(currentSelected);
         }
@@ -101,7 +113,7 @@ if (shapeArray === []){
 
 function Bucket() {
     var randomNumber = randomBucketShape();
-   // console.log('bucket Num: ' + randomNumber);
+    // console.log('bucket Num: ' + randomNumber);
     this.shape = shapeArray[randomNumber],
     // this.color = colorArray[randomNumber],
     this.src = sourceArray[randomNumber],
@@ -132,7 +144,7 @@ basket3.addEventListener('click',clickBucketHandler);
 
 function clickBucketHandler(event){
     console.log(event.target.id);
-  
+
     var i = event.target.id.slice(-1);
     if(currentSelected.shape === Bucket.bucketArray[i].shape){
         console.log('congrats');
@@ -140,7 +152,9 @@ function clickBucketHandler(event){
         for (var j in shapes){
             shapes[j].drawShape();
         }
-}
+        scoreCount = scoreCount + 100;
+        console.log ('score inside clickHandler: ' + scoreCount);
+    }
 //     if(currentSelected.shape===Bucket.currentSelected)
 
 }
@@ -182,22 +196,12 @@ Shape.prototype.drawShape = function(){
     }
 };
 
-// event listener on click
-
 
 // track score
 
-// create var to hold current shape
-
-
 // add game timer function for 60 sec
 
-
-
-// drawSquare();
-// drawTriangle();
-// drawDiamond();
-// drawCircle();
+// 4 new shapes on page load
 new Shape();
 new Shape();
 new Shape();

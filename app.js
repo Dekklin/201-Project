@@ -14,7 +14,7 @@ function onLoad() {
     if(retrievedPlayer && retrievedPlayer.length){
         BuildPlayer.playerList = retrievedPlayer;
         return;
-    // }
+        // }
     }
 }
 function BuildPlayer (name) {
@@ -80,7 +80,3 @@ onLoad();
 console.log(currentPlayer);
 
 //
-
-
-
-
