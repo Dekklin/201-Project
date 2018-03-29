@@ -22,5 +22,13 @@ border: 1px solid black;
 
 #timer {
   float: right;
-  padding-left: 15px;
+  font-size: 25px;
+  border: 2px solid black;
+}
+
+#score {
+  float:right;
+  font-size: 25px;
+  border: 2px solid black;
+  
 }
