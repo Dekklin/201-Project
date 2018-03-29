@@ -1,12 +1,18 @@
+
 * {
   box-sizing: border-box;
 }
+
 body{
   background-image: url("Assets/skyandgrass.png" );
+  background-size: cover;
   background-repeat: no-repeat;
   border-left:10em solid rgb(19,2,2);
   border-right:10em solid rgb(19, 2, 2);
- 
+  height: 100%;
+ }
+ section {
+   height:100%;
  }
  
  img{
@@ -22,14 +28,13 @@ margin: auto;
 padding: auto;
 width: 900px;
 height: 450px;
-border: 1px solid black;
+border:5px solid black;
 }
 
 #timer {
   float: left;
   margin-left: -150px;
 }
-
 #score {
   float:right;
   margin-top: -1250px;
@@ -38,11 +43,9 @@ border: 1px solid black;
   width: 50px;
   height: 50px;
   font-size: 80px;
-  color: yellow;
-  
+  color: yellow; 
 }
 #displayTime {
-
 color: red;
   font-size: 80px;
   float: left;
