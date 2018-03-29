@@ -26,5 +26,5 @@ function loadScore(){
 }
 
 retrieveLocalStorage();
-currentPlayer.attempts =[100,200,300];
+// currentPlayer.attempts =[currentPlayer.attempts];
 loadScore();

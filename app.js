@@ -19,7 +19,7 @@ function onLoad() {
 function BuildPlayer (name) {
     this.name = name;
     this.highScore = 0;
-    this.attempts = 0;
+    this.attempts = [];
     this.currentScore = 0;
     this.recent = [];
     console.log('player created');
@@ -57,7 +57,7 @@ function handleSubmit(event) {
 }
 
 function savePlayerToLocalStorage() {
-    // TODO: Save the cart to Local Storage
+    // Save the cart to Local Storage
     var playerData = JSON.stringify(playerList);
     var currentPlayerData = JSON.stringify(currentPlayer);
     localStorage.setItem( 'LocalCurrentPlayer' , currentPlayerData);

@@ -8,16 +8,19 @@ var scoreCount = 0;
 var currentSelected = null;
 var shapes = [];
 var currentSelectedIndex = null;
-var currentPlayer = 0;
-var playerList = 0;
+var currentPlayer = null;
+var playerList = null;
 function retrieveLocalStorage() {
     var playerDataString = localStorage.getItem('LocalPlayers');
     var currentPlayerDataString = localStorage.getItem('LocalCurrentPlayer');
+
     var retrievedCurrentPlayer = JSON.parse(currentPlayerDataString);
     currentPlayer = retrievedCurrentPlayer;
+
     var retrievedPlayer = JSON.parse(playerDataString);
     playerList = retrievedPlayer;
-    console.log(playerList);
+
+    console.log('retrieved player list: ' + playerList);
 }
 retrieveLocalStorage();
 
@@ -190,11 +193,29 @@ function startGame() {
     }
     setInterval(pasteShapes, 5000);
 
+    new Shape();
+    new Shape();
+    new Shape();
+    new Shape();
+}
+
+function saveData(){
+    if(scoreCount > currentPlayer.highScore){
+        currentPlayer.highScore = scoreCount;
+        currentPlayer.attempts.push(scoreCount);
+    }
+    //add last score to currentPlayer.attempts object
+    currentPlayer.attempts.push(scoreCount);
 
 
+    // save to local storage
+    var playerData = JSON.stringify(playerList);
+    var currentPlayerData = JSON.stringify(currentPlayer);
+    localStorage.setItem( 'LocalCurrentPlayer', currentPlayerData);
+    localStorage.setItem( 'LocalPlayers', playerData);
+
+    window.location.href='score.html';
 }
 
 setTimeout(startGame, 1000);
-setTimeout(function(){
-    current.attempts.push(scoreCount);
-    window.location.href='score.html';},65000);
+setTimeout(saveData, 20000);
