@@ -233,4 +233,3 @@ function saveData(){
 
 setTimeout(startGame, 500);
 setTimeout(saveData, 1000);
-
