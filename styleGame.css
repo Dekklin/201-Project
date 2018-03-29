@@ -1,8 +1,8 @@
 body{
   background-image: url("Assets/skyandgrass.png" );
   background-repeat: no-repeat;
-  border-left:10em solid brown;
-  border-right:10em solid brown;
+  border-left:10em solid rgb(19,2,2);
+  border-right:10em solid rgb(19, 2, 2);
  
  }
  

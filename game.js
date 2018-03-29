@@ -4,7 +4,7 @@
 var currentSelected = null;
 var shapes = [];
 
-var points =0;
+
 
 // random shape function
 function randomShapes() {
@@ -141,7 +141,7 @@ function clickBucketHandler(event){
         for (var j in shapes){
             shapes[j].drawShape();
         }
-        points+=100;
+       
 
     }
   
