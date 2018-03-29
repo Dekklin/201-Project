@@ -1,14 +1,50 @@
+* {
+    border:5px double black;
+}
+
 body{
     background: lightblue url("Assets/blankscreenfixed.png");
     background-repeat: no-repeat;
-
+    padding-right: 155px;
    
   }
 
-  section {
+section {
+    display: absolute;
     text-align: center;
-    margin-top: 10em;
+    margin-top: -35px;
     line-height: 24px;
     margin-right: 9em;
     font-family: 'Press Start 2P', cursive;
   }
+
+#play-button{
+    position: relative;
+    align-content: center;
+    margin-left:1100px;
+    margin-top: 400px;
+    border-radius: 50%;   
+}
+  
+
+nav{
+    margin:100px 0px 10px 610px;
+  }
+  nav ul{
+    margin:0px;
+    padding:5px 0px 5px 30px;
+    list-style-type: none;
+  }
+  nav li{
+    font-size: 25px;
+    display:inline-block;
+    margin-left:525px;
+    line-height: 35px;
+  }
+  nav li a{
+    color:#ffffff;
+  }
+  nav li a:hover,nav li a.current{
+    color:#000000;
+  }
+
