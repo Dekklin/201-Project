@@ -1,0 +1,14 @@
+body{
+    background: lightblue url("Assets/blankscreenfixed.png");
+    background-repeat: no-repeat;
+
+   
+  }
+
+  section {
+    text-align: center;
+    margin-top: 10em;
+    line-height: 24px;
+    margin-right: 9em;
+    font-family: 'Press Start 2P', cursive;
+  }
