@@ -13,7 +13,6 @@ function onLoad() {
         var retrievedPlayer = JSON.parse(playerDataString);
         playerList = retrievedPlayer;
         return;
-    // }
     }
 }
 function BuildPlayer (name) {
@@ -27,12 +26,7 @@ function BuildPlayer (name) {
     //currentPlayer = this;
 }
 
-
-
-
-
 // attach event listner to login submit button
-
 
 function handleSubmit(event) {
     event.preventDefault();
@@ -67,9 +61,6 @@ function savePlayerToLocalStorage() {
 
 onLoad();
 console.log(currentPlayer);
-
-//
-
 
 
 
