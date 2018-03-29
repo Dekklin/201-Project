@@ -38,8 +38,8 @@ function handleSubmit(event) {
     event.preventDefault();
     var name = event.target.name.value;
     var foundPlayer = false;
-    for (var i in BuildPlayer.playerList) {
-        if (BuildPlayer.playerList[i].name.includes(name)){
+    for (var i in playerList) {
+        if (playerList[i].name.includes(name)){
             currentPlayer = playerList[i];
             foundPlayer = true;
             alert('Welcome Back ' + name);
