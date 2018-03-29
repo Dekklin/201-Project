@@ -20,7 +20,7 @@ function loadScore(){
 
     for(var i in currentPlayer.attempts){
         var attemptDisplay = document.createElement('li');
-        attemptDisplay.textContent = currentPlayer.attempts[i];
+        attemptDisplay.textContent = currentPlayer.recent[i];
         orderAttempts.appendChild(attemptDisplay);
     }
 }

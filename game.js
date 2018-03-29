@@ -200,28 +200,15 @@ function startGame() {
 }
 
 function saveData(){
-    if(scoreCount > currentPlayer.highScore){
-        currentPlayer.highScore = scoreCount;
-        currentPlayer.attempts.push(scoreCount);
-    }
-    //add last score to currentPlayer.attempts object
-    currentPlayer.attempts.push(scoreCount);
-  
-    new Shape();
-    new Shape();
-    new Shape();
-    new Shape();
-}
-function saveData(){
     currentPlayer.recent.unshift(scoreCount);
     if(scoreCount > currentPlayer.highScore){
         currentPlayer.highScore = scoreCount;
     }
-  
+
     if(currentPlayer.recent.length >= 5){
         currentPlayer.recent.pop();
     }
-  
+
     currentPlayer.attempts ++;
     window.location.href='score.html';
     var playerData = JSON.stringify(playerList);
@@ -232,4 +219,4 @@ function saveData(){
 }
 
 setTimeout(startGame, 500);
-setTimeout(saveData, 1000);
+setTimeout(saveData, 10000);
