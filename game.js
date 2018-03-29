@@ -206,16 +206,31 @@ function saveData(){
     }
     //add last score to currentPlayer.attempts object
     currentPlayer.attempts.push(scoreCount);
-
-
-    // save to local storage
+  
+    new Shape();
+    new Shape();
+    new Shape();
+    new Shape();
+}
+function saveData(){
+    currentPlayer.recent.unshift(scoreCount);
+    if(scoreCount > currentPlayer.highScore){
+        currentPlayer.highScore = scoreCount;
+    }
+  
+    if(currentPlayer.recent.length >= 5){
+        currentPlayer.recent.pop();
+    }
+  
+    currentPlayer.attempts ++;
+    window.location.href='score.html';
     var playerData = JSON.stringify(playerList);
     var currentPlayerData = JSON.stringify(currentPlayer);
     localStorage.setItem( 'LocalCurrentPlayer', currentPlayerData);
     localStorage.setItem( 'LocalPlayers', playerData);
-
     window.location.href='score.html';
 }
 
-setTimeout(startGame, 1000);
-setTimeout(saveData, 20000);
+setTimeout(startGame, 500);
+setTimeout(saveData, 1000);
+

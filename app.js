@@ -65,16 +65,6 @@ function savePlayerToLocalStorage() {
 }
 
 
-// attach submit value to userName in array
-
-// store userName in local storage
-
-// check local storage if user has played before
-// if (userName) then display 'welcome back ____'.
-// If wrong user, allow option to create new user
-
-
-//
 onLoad();
 console.log(currentPlayer);
 
