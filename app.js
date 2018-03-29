@@ -1,6 +1,6 @@
 'use strict';
 
-BuildPlayer.playerList = [];
+var playerList = [];
 var currentPlayer = '';
 
 var playerForm = document.getElementById('playerform');
@@ -9,10 +9,9 @@ playerForm.addEventListener('submit', handleSubmit);
 
 function onLoad() {
     var playerDataString = localStorage.getItem('LocalPlayers');
-    var retrievedPlayer = JSON.parse(playerDataString);
-
-    if(retrievedPlayer && retrievedPlayer.length){
-        BuildPlayer.playerList = retrievedPlayer;
+    if(playerDataString && playerDataString.length){
+        var retrievedPlayer = JSON.parse(playerDataString);
+        playerList = retrievedPlayer;
         return;
     // }
     }
@@ -24,7 +23,7 @@ function BuildPlayer (name) {
     this.currentScore = 0;
     this.recent = [];
     console.log('player created');
-    BuildPlayer.playerList.push(this);
+    playerList.push(this);
     //currentPlayer = this;
 }
 
@@ -41,7 +40,7 @@ function handleSubmit(event) {
     var foundPlayer = false;
     for (var i in BuildPlayer.playerList) {
         if (BuildPlayer.playerList[i].name.includes(name)){
-            currentPlayer = BuildPlayer.playerList[i];
+            currentPlayer = playerList[i];
             foundPlayer = true;
             alert('Welcome Back ' + name);
             console.log('i am here ' + currentPlayer.name);
@@ -51,7 +50,7 @@ function handleSubmit(event) {
     }
     if (!foundPlayer){
         new BuildPlayer (name);
-        currentPlayer = BuildPlayer.playerList[BuildPlayer.playerList.length-1];
+        currentPlayer = playerList[playerList.length-1];
     }
 
     savePlayerToLocalStorage();
@@ -59,7 +58,7 @@ function handleSubmit(event) {
 
 function savePlayerToLocalStorage() {
     // TODO: Save the cart to Local Storage
-    var playerData = JSON.stringify(BuildPlayer);
+    var playerData = JSON.stringify(playerList);
     var currentPlayerData = JSON.stringify(currentPlayer);
     localStorage.setItem( 'LocalCurrentPlayer' , currentPlayerData);
     localStorage.setItem( 'LocalPlayers', playerData);

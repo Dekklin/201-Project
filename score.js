@@ -1,6 +1,6 @@
 'use strict';
 var currentPlayer = 0;
-var playerData = 0;
+var playerList = 0;
 var orderAttempts = document.getElementById('displayAttempts');
 function retrieveLocalStorage() {
     var playerDataString = localStorage.getItem('LocalPlayers');
@@ -8,8 +8,8 @@ function retrieveLocalStorage() {
     var retrievedCurrentPlayer = JSON.parse(currentPlayerDataString);
     currentPlayer = retrievedCurrentPlayer;
     var retrievedPlayer = JSON.parse(playerDataString);
-    playerData = retrievedPlayer;
-    console.log(playerData);
+    playerList = retrievedPlayer;
+    console.log(playerList);
 }
 
 function loadScore(){

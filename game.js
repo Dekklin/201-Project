@@ -3,11 +3,24 @@
 // global variables
 var canvas = document.getElementById('shape');
 var shapeCanvas = canvas.getContext('2d');
-
+var scoreCount = 0;
 
 var currentSelected = null;
 var shapes = [];
 var currentSelectedIndex = null;
+var currentPlayer = 0;
+var playerList = 0;
+function retrieveLocalStorage() {
+    var playerDataString = localStorage.getItem('LocalPlayers');
+    var currentPlayerDataString = localStorage.getItem('LocalCurrentPlayer');
+    var retrievedCurrentPlayer = JSON.parse(currentPlayerDataString);
+    currentPlayer = retrievedCurrentPlayer;
+    var retrievedPlayer = JSON.parse(playerDataString);
+    playerList = retrievedPlayer;
+    console.log(playerList);
+}
+retrieveLocalStorage();
+
 
 
 function startGame() {
@@ -126,6 +139,8 @@ function startGame() {
             for (var j in shapes){
                 shapes[j].drawShape();
             }
+            scoreCount = scoreCount + 100;
+            console.log ('score inside clickHandler: ' + scoreCount);
         }
 
     }
@@ -171,11 +186,15 @@ function startGame() {
         new Shape();
         new Shape();
         new Shape();
+
     }
-    pasteShapes();
+    setInterval(pasteShapes, 5000);
 
 
 
 }
 
-setTimeout(startGame, 2000);
+setTimeout(startGame, 1000);
+setTimeout(function(){
+    current.attempts.push(scoreCount);
+    window.location.href='score.html';},65000);
