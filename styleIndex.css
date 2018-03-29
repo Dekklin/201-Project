@@ -8,7 +8,12 @@ h1{
   font-family: 'Press Start 2P', cursive;
   font-size:50px;
 }
-
+#button{
+  position: relative;
+  align-content: center;
+  margin-left:750px;
+  margin-top: 30px;
+}
 nav{
   margin:100px 0px 10px 610px;
 }
@@ -72,7 +77,6 @@ img:hover {
   90% { transform: translate(1px, 2px) rotate(0deg); }
   100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
-#myCanvas{
-  float: right;
- }
- 
+div>li{
+  font-size: 40px;
+}
