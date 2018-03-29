@@ -4,7 +4,7 @@
 var currentSelected = null;
 var shapes = [];
 
-
+var points =0;
 
 // random shape function
 function randomShapes() {
@@ -52,9 +52,9 @@ function clickedOnShape(event) {
     for(var i in shapes){
         if(((event.offsetX/3)>= shapes[i].x-2) && ((event.offsetX/3) <= shapes[i].x+17) && ((event.offsetY/3) >= shapes[i].y-8) && ((event.offsetY/3) <= shapes[i].y+23)){
             currentSelected = shapes[i];
-            
+
             shapes.splice(i, 1);
-           
+
             console.log('got it');
             console.log(currentSelected);
         }
@@ -101,7 +101,7 @@ if (shapeArray === []){
 
 function Bucket() {
     var randomNumber = randomBucketShape();
-   // console.log('bucket Num: ' + randomNumber);
+    // console.log('bucket Num: ' + randomNumber);
     this.shape = shapeArray[randomNumber],
     // this.color = colorArray[randomNumber],
     this.src = sourceArray[randomNumber],
@@ -130,9 +130,10 @@ basket2.addEventListener('click',clickBucketHandler);
 basket3.addEventListener('click',clickBucketHandler);
 
 
+
 function clickBucketHandler(event){
     console.log(event.target.id);
-  
+
     var i = event.target.id.slice(-1);
     if(currentSelected.shape === Bucket.bucketArray[i].shape){
         console.log('congrats');
@@ -140,10 +141,16 @@ function clickBucketHandler(event){
         for (var j in shapes){
             shapes[j].drawShape();
         }
+        points+=100;
+
+    }
+  
 }
 //     if(currentSelected.shape===Bucket.currentSelected)
 
-}
+
+
+
 
 
 Shape.prototype.drawShape = function(){
@@ -202,3 +209,5 @@ new Shape();
 new Shape();
 new Shape();
 new Shape();
+
+//if current selected.shape === Bucket.bucketArray[i].shape
