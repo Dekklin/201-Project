@@ -1,15 +1,17 @@
 'use strict';
-
 // global variables
+var timer = 60;
+var timerEle = document.getElementById('displayTime');
 var canvas = document.getElementById('shape');
 var shapeCanvas = canvas.getContext('2d');
 var scoreCount = 0;
-
 var currentSelected = null;
 var shapes = [];
 var currentSelectedIndex = null;
 var currentPlayer = null;
 var playerList = null;
+var liElement = document.getElementById('score');
+//var timeElement = document.getElementById('displayTime');
 function retrieveLocalStorage() {
     var playerDataString = localStorage.getItem('LocalPlayers');
     var currentPlayerDataString = localStorage.getItem('LocalCurrentPlayer');
@@ -25,9 +27,34 @@ function retrieveLocalStorage() {
 retrieveLocalStorage();
 
 
-
 function startGame() {
 
+    function displayTime(){
+        timer --;
+        timerEle.textContent = timer.toString();
+    }
+    setInterval(displayTime, 1000);
+
+
+    // function MyTimer(callback, val) {
+    //     val = val || 60;
+    //     var timer=setInterval(function() {
+    //         callback(val);
+    //         if(val-- <= 0) {
+    //             clearInterval(timer);
+    //         }
+    //     }, 1000);
+    // }
+    // new MyTimer(function(60) {
+    //     var timerMsg = '00:' + (val >= 10 ? val : '0' + val);
+    //     document.getElementById('displayTimer').textContent = timerMsg;
+    // });
+
+
+
+
+
+    liElement.textContent = scoreCount;
 
 
     // random shape function
@@ -143,6 +170,7 @@ function startGame() {
                 shapes[j].drawShape();
             }
             scoreCount = scoreCount + 100;
+            liElement.textContent = scoreCount;
             console.log ('score inside clickHandler: ' + scoreCount);
         }
 
@@ -219,4 +247,4 @@ function saveData(){
 }
 
 setTimeout(startGame, 500);
-setTimeout(saveData, 10000);
+setTimeout(saveData, 100000);

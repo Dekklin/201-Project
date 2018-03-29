@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 body{
   background-image: url("Assets/skyandgrass.png" );
   background-repeat: no-repeat;
@@ -10,26 +13,38 @@ body{
   position: relative;
   /* margin:600px 0px 10px 150px; */
   width:200px;
-  display:inline;
   padding-top:150px;
   margin:20px 20px 0px 50px
 }
 
 canvas {
+margin: auto;
+padding: auto;
 width: 900px;
 height: 450px;
 border: 1px solid black;
 }
 
 #timer {
-  float: right;
-  font-size: 25px;
-  border: 2px solid black;
+  float: left;
+  margin-left: -150px;
 }
 
 #score {
   float:right;
-  font-size: 25px;
-  border: 2px solid black;
+  margin-top: -1250px;
+  margin-right: -100px;
+  text-align: center;
+  width: 50px;
+  height: 50px;
+  font-size: 80px;
+  color: yellow;
   
+}
+#displayTime {
+
+color: red;
+  font-size: 80px;
+  float: left;
+
 }
