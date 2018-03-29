@@ -18,9 +18,9 @@ function loadScore(){
     var displayHS = document.getElementById('displayHighScore');
     displayHS.textContent = currentPlayer.highScore;
 
-    for(var i in currentPlayer.attempts){
+    for(var i in currentPlayer.recent){
         var attemptDisplay = document.createElement('li');
-        attemptDisplay.textContent = currentPlayer.attempts[i];
+        attemptDisplay.textContent = currentPlayer.recent[i];
         orderAttempts.appendChild(attemptDisplay);
     }
 }
