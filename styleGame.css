@@ -1,0 +1,35 @@
+body{
+  background-image: url("Assets/skyandgrass.png" );
+  background-repeat: no-repeat;
+  border-left:10em solid rgb(19,2,2);
+  border-right:10em solid rgb(19, 2, 2);
+ 
+ }
+ 
+ img{
+  position: relative;
+  /* margin:600px 0px 10px 150px; */
+  width:200px;
+  display:inline;
+  padding-top:150px;
+  margin:20px 20px 0px 50px
+}
+
+canvas {
+width: 900px;
+height: 450px;
+border: 1px solid black;
+}
+
+#timer {
+  float: right;
+  font-size: 25px;
+  border: 2px solid black;
+}
+
+#score {
+  float:right;
+  font-size: 25px;
+  border: 2px solid black;
+  
+}
