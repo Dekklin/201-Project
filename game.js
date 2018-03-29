@@ -191,10 +191,22 @@ function startGame() {
     setInterval(pasteShapes, 5000);
 
 
-
+    new Shape();
+    new Shape();
+    new Shape();
+    new Shape();
+}
+function saveData(){
+    currentPlayer.recent.unshift(scoreCount);
+    if(scoreCount > currentPlayer.highScore){
+        currentPlayer.highScore = scoreCount;
+    }
+    if(currentPlayer.recent.length >= 5){
+        currentPlayer.recent.pop();
+    }
+    currentPlayer.attempts ++;
+    window.location.href='score.html';
 }
 
-setTimeout(startGame, 1000);
-setTimeout(function(){
-    current.attempts.push(scoreCount);
-    window.location.href='score.html';},65000);
+setTimeout(startGame, 500);
+setTimeout(saveData, 1000);
