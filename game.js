@@ -36,8 +36,8 @@ function randomYCoordinate() {
 // make shape creator constructor function
 function Shape (){
     this.color = randomColor();
-    this.shape =randomShapes();
-    this.x =randomXCoordinate();
+    this.shape = randomShapes();
+    this.x = randomXCoordinate();
     this.y = randomYCoordinate();
     this.drawShape();
     shapes.push(this);
@@ -52,11 +52,9 @@ function clickedOnShape(event) {
     for(var i in shapes){
         if(((event.offsetX/3)>= shapes[i].x-2) && ((event.offsetX/3) <= shapes[i].x+17) && ((event.offsetY/3) >= shapes[i].y-8) && ((event.offsetY/3) <= shapes[i].y+23)){
             currentSelected = shapes[i];
-            shapeCanvas.clearRect(0,0,900,450);
+            
             shapes.splice(i, 1);
-            for (var j in shapes){
-                shapes[j].drawShape();
-            }
+           
             console.log('got it');
             console.log(currentSelected);
         }
@@ -65,24 +63,86 @@ function clickedOnShape(event) {
 }
 
 // make constructor function for bucket image generator
-var bucketArray = [];
+// var bucketArray = [];
 
-function Bucket (src, shape) {
-    this.src = src;
-    this.shape = shape;
-    bucketArray.push(this);
+// function Bucket (src, shape) {
+//     this.src = src;
+//     this.shape = shape;
+//     bucketArray.push(this);
+// }
+
+// new Bucket ('Assets/square.png', 'square');
+// new Bucket ('Assets/triangle.png', 'triangle');
+// new Bucket ('Assets/diamond.png', 'diamond');
+// new Bucket ('Assets/circle.png', 'circle');
+
+// var bucketImg = document.getElementById('basket1');
+// bucketImg.src = bucketArray[i].src;
+
+// function randomPosition (){
+//     var position1;
+// }
+Bucket.bucketArray = [];
+var shapeArray = ['square', 'circle', 'triangle', 'diamond'];
+var sourceArray = ['Assets/square.png', 'Assets/circle.png', 'Assets/triangle.png', 'Assets/diamond.png'];
+function randomBucketShape() {
+    var i = Math.floor(Math.random()*shapeArray.length);
+    console.log('fn random Num:' + i);
+    console.log(sourceArray);
+    return i;
+
+}
+if (shapeArray === []){
+    shapeArray = ['square', 'circle', 'triangle', 'diamond'];
+    sourceArray = ['Assets/square.png', 'Assets/circle.png', 'Assets/triangle.png', 'Assets/diamond.png'];
+    //  colorArray = ['red', 'blue', 'green', 'yellow'];
 }
 
-new Bucket ('Assets/square.png', 'square');
-new Bucket ('Assets/triangle.png', 'triangle');
-new Bucket ('Assets/diamond.png', 'diamond');
-new Bucket ('Assets/circle.png', 'circle');
 
-var bucketImg = document.getElementById('basket1');
-bucketImg.src = bucketArray[i].src;
+function Bucket() {
+    var randomNumber = randomBucketShape();
+   // console.log('bucket Num: ' + randomNumber);
+    this.shape = shapeArray[randomNumber],
+    // this.color = colorArray[randomNumber],
+    this.src = sourceArray[randomNumber],
+    sourceArray.splice(randomNumber,1);
+    shapeArray.splice(randomNumber,1);
+    Bucket.bucketArray.push(this);
+}
+new Bucket;
+new Bucket;
+new Bucket;
+new Bucket;
 
-function randomPosition (){
-    var position1;
+var basket0 = document.getElementById('basket0');
+var basket1 = document.getElementById('basket1');
+var basket2 = document.getElementById('basket2');
+var basket3 = document.getElementById('basket3');
+
+basket0.src =Bucket.bucketArray[0].src;
+basket1.src = Bucket.bucketArray[1].src;
+basket2.src = Bucket.bucketArray[2].src;
+basket3.src = Bucket.bucketArray[3].src;
+
+basket0.addEventListener('click',clickBucketHandler);
+basket1.addEventListener('click',clickBucketHandler);
+basket2.addEventListener('click',clickBucketHandler);
+basket3.addEventListener('click',clickBucketHandler);
+
+
+function clickBucketHandler(event){
+    console.log(event.target.id);
+  
+    var i = event.target.id.slice(-1);
+    if(currentSelected.shape === Bucket.bucketArray[i].shape){
+        console.log('congrats');
+        shapeCanvas.clearRect(0,0,900,450);
+        for (var j in shapes){
+            shapes[j].drawShape();
+        }
+}
+//     if(currentSelected.shape===Bucket.currentSelected)
+
 }
 
 
@@ -141,4 +201,4 @@ Shape.prototype.drawShape = function(){
 new Shape();
 new Shape();
 new Shape();
-
+new Shape();
