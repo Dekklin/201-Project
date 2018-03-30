@@ -1,5 +1,6 @@
 body{
   background:linear-gradient(to right, #669999 20%, #00ffcc 92%);
+  border:30px groove gray;
 }
 
 h1{
@@ -30,11 +31,11 @@ nav li{
 }
 
 nav li a{
-  color:#ffffff;
+  color:#1b1a12;
 }
 
 nav li a:hover,nav li a.current{
-  color:#000000;
+  color:#ffffff;
 }
 
 #playerform{
@@ -51,9 +52,14 @@ h3{
 }
 
 #direction ul {
+  
   line-height: 1.25em;
   text-align: center; 
   margin: 10px 0px;
+}
+ul>li{
+  font-family: 'Press Start 2P', cursive;
+  line-height: 30px;
 }
 
 img{
@@ -79,4 +85,7 @@ img:hover {
   80% { transform: translate(-1px, -1px) rotate(1deg); }
   90% { transform: translate(1px, 2px) rotate(0deg); }
   100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+form>button{
+  align-self: center;
 }

@@ -1,5 +1,5 @@
 * {
-    border:5px double black;
+    border:30px groove gray;
 }
 
 body{
@@ -42,7 +42,7 @@ nav{
     line-height: 35px;
   }
   nav li a{
-    color:#ffffff;
+    color:#002000;
   }
   nav li a:hover,nav li a.current{
     color:#000000;
