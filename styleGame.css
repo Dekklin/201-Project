@@ -34,6 +34,7 @@ border:5px solid black;
 #timer {
   float: left;
   margin-left: -150px;
+  position: fixed;
 }
 #score {
   float:right;
