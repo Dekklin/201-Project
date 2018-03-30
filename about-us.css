@@ -1,7 +1,7 @@
 
 body{
 		background:linear-gradient(to right, #669999 20%, #00ffcc 92%);
-		border:5px solid black;
+		border:30px groove gray;
 }
 main {
 	width: 100%;
@@ -36,7 +36,7 @@ h4{
 hr {
 	height: 10px;
 	border: 0;
-	box-shadow: 0 10px 10px -10px #8c8b8b inset;
+	box-shadow: 0 10px 10px -10px darkslategrey inset;
 }
 
 a {
@@ -55,6 +55,7 @@ p {
 	width: 70%;
 	border-top: 5px solid black;
 	border-bottom: 5px solid black;
+	font-family: 'Press Start 2P', cursive;
 }
 
 ul {
@@ -88,7 +89,8 @@ section>section>p:last-child {
 img {
     width: 200px;
 		height:200px;
-		border:5px solid black;
+		margin-top:10px;
+		border:10px groove gray;
 
 }
 
