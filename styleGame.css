@@ -10,6 +10,7 @@ body{
   border-left:10em solid rgb(19,2,2);
   border-right:10em solid rgb(19, 2, 2);
   height: 100%;
+  padding-bottom: 115px;
  }
  section {
    height:100%;

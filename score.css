@@ -1,9 +1,3 @@
-
-* {
-    border:30px groove gray;
-}
-
-
 body{
     background:linear-gradient(to right, #669999 20%, #00ffcc 92%);
     
@@ -16,7 +10,9 @@ h1 {
 }
 
 section {
-    display: absolute;
+    position: absolute;
+    top: 9.2%;
+    left: 43.5%;
     text-align: center;
     line-height: 24px;
     margin-top:20%;
@@ -25,25 +21,19 @@ section {
     z-index: 7;
 }
 
-img {
-    display: inline-block;
-    margin: 1px auto;
-    /* z-index: auto; */
-    width:100%;
-    align-content: center;
+#computer {
+  position: relative;
+  float: left;
+  align-content: center;
+  margin-left: 20%;
 }
 
 #play-button{
-    position: relative;
+    position: absolute;
+    top: 38%;
+    left:43.5%;
+
     align-content: center;
-    margin-left:660px;
-    margin-top: 740px;
-    align-content: center;
-    /* display: block;
-    margin: 10px auto;
-    font-size: 30px;
-    font-family: 'Press Start 2P';
-    background-color: #00ffcc; */
     
 }
 
@@ -53,8 +43,8 @@ nav{
 }
 
 ul {
-    display: inline;
-}
+    display: inline; 
+   }
 nav ul{
     margin:0px;
     padding:5px 0px 5px 30px;
