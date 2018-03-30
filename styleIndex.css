@@ -69,9 +69,20 @@ ul>li{
   margin: 10px auto;
   font-size: 30px;
   font-family: 'Press Start 2P';
-  border: 1px solid black;
   padding: 5px;
+  border-radius: 4px;
+  background: black;
+  color: white;
+  border: 2px solid silver;
+
 }
+
+.show-me:hover {
+  color: black;
+  background: white;
+  border: 2px solid silver;
+}
+
 a:link {
    text-decoration: none;
  }
@@ -79,8 +90,6 @@ a:link {
  .show-me a:visited {
    text-decoration: none;
  }
-
-
 
 .hide-me {
   display: none;
