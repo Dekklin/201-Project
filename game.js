@@ -48,25 +48,6 @@ function startGame() {
     }
     setInterval(displayTime, 1000);
 
-
-    // function MyTimer(callback, val) {
-    //     val = val || 60;
-    //     var timer=setInterval(function() {
-    //         callback(val);
-    //         if(val-- <= 0) {
-    //             clearInterval(timer);
-    //         }
-    //     }, 1000);
-    // }
-    // new MyTimer(function(60) {
-    //     var timerMsg = '00:' + (val >= 10 ? val : '0' + val);
-    //     document.getElementById('displayTimer').textContent = timerMsg;
-    // });
-
-
-
-
-
     liElement.textContent = scoreCount;
 
 
@@ -108,8 +89,6 @@ function startGame() {
     }
 
 
-    var shapeArray = ['square', 'circle', 'triangle', 'diamond'];
-    var sourceArray = ['Assets/square.png', 'Assets/circle.png', 'Assets/triangle.png', 'Assets/diamond.png'];
 
     function clickedOnShape(event) {
         for(var i in shapes){
@@ -133,10 +112,12 @@ function startGame() {
         return i;
 
     }
-    if (shapeArray === []){
-        shapeArray = ['square', 'circle', 'triangle', 'diamond'];
-        sourceArray = ['Assets/square.png', 'Assets/circle.png', 'Assets/triangle.png', 'Assets/diamond.png'];
-    }
+    var shapeArray = ['square', 'circle', 'triangle', 'diamond'];
+    var sourceArray = ['Assets/square.png', 'Assets/circle.png', 'Assets/triangle.png', 'Assets/diamond.png'];
+    // if (shapeArray === []){
+    //     shapeArray = ['square', 'circle', 'triangle', 'diamond'];
+    //     sourceArray = ['Assets/square.png', 'Assets/circle.png', 'Assets/triangle.png', 'Assets/diamond.png'];
+    // }
 
     Bucket.bucketArray = [];
 
@@ -165,6 +146,7 @@ function startGame() {
     basket2.src = Bucket.bucketArray[2].src;
     basket3.src = Bucket.bucketArray[3].src;
 
+
     basket0.addEventListener('click',clickBucketHandler);
     basket1.addEventListener('click',clickBucketHandler);
     basket2.addEventListener('click',clickBucketHandler);
@@ -173,10 +155,10 @@ function startGame() {
 
     function clickBucketHandler(event){
         console.log(event.target.id);
-        shapes.splice(currentSelectedIndex, 1);
         var i = event.target.id.slice(-1);
         if(currentSelected.shape === Bucket.bucketArray[i].shape){
-
+            shapes.splice(currentSelectedIndex, 1);
+            currentSelected = null;
             console.log('congrats');
             shapeCanvas.clearRect(0,0,900,450);
             for (var j in shapes){
@@ -184,7 +166,6 @@ function startGame() {
             }
             scoreCount = scoreCount + 100;
             liElement.textContent = scoreCount;
-            console.log ('score inside clickHandler: ' + scoreCount);
         }
 
     }
@@ -225,14 +206,26 @@ function startGame() {
             shapeCanvas.fill();
         }
     };
-    function pasteShapes() {
+    function changeScreen() {
+        Bucket.bucketArray = [];
+        shapeArray = ['square', 'circle', 'triangle', 'diamond'];
+        sourceArray = ['Assets/square.png', 'Assets/circle.png', 'Assets/triangle.png', 'Assets/diamond.png'];
         new Shape();
         new Shape();
         new Shape();
         new Shape();
-
+        new Bucket();
+        new Bucket();
+        new Bucket();
+        new Bucket();
+        basket0.src = Bucket.bucketArray[0].src;
+        basket1.src = Bucket.bucketArray[1].src;
+        basket2.src = Bucket.bucketArray[2].src;
+        basket3.src = Bucket.bucketArray[3].src;
+        shapeArray = ['square', 'circle', 'triangle', 'diamond'];
+        sourceArray = ['Assets/square.png', 'Assets/circle.png', 'Assets/triangle.png', 'Assets/diamond.png'];
     }
-    setInterval(pasteShapes, 5000);
+    setInterval(changeScreen, 5000);
 
     new Shape();
     new Shape();

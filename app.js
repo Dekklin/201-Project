@@ -1,11 +1,9 @@
 'use strict';
-
 var playerList = [];
 var currentPlayer = '';
 
 var playerForm = document.getElementById('playerform');
 playerForm.addEventListener('submit', handleSubmit);
-
 
 function onLoad() {
     var playerDataString = localStorage.getItem('LocalPlayers');
@@ -26,8 +24,6 @@ function BuildPlayer (name) {
     //currentPlayer = this;
 }
 
-// attach event listner to login submit button
-
 function handleSubmit(event) {
     event.preventDefault();
     var name = event.target.name.value;
@@ -38,7 +34,6 @@ function handleSubmit(event) {
             foundPlayer = true;
             alert('Welcome Back ' + name);
             console.log('i am here ' + currentPlayer.name);
-
             break;
         }
     }
@@ -46,14 +41,11 @@ function handleSubmit(event) {
         new BuildPlayer (name);
         currentPlayer = playerList[playerList.length-1];
     }
-
     savePlayerToLocalStorage();
-
     // event listener on name button to call play game button
     var gameButton = document.getElementById('playGameButton');
     gameButton.setAttribute('class', 'show-me');
 }
-
 function savePlayerToLocalStorage() {
     // Save the cart to Local Storage
     var playerData = JSON.stringify(playerList);
@@ -61,10 +53,7 @@ function savePlayerToLocalStorage() {
     localStorage.setItem( 'LocalCurrentPlayer' , currentPlayerData);
     localStorage.setItem( 'LocalPlayers', playerData);
 }
-
-
 onLoad();
 console.log(currentPlayer);
-
 
 

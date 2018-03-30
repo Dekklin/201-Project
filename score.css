@@ -32,35 +32,60 @@ section {
     position: absolute;
     top: 38%;
     left:43.5%;
-
-    align-content: center;
     
+    align-content: center;
+}
+
+button {
+  font-family: 'Press Start 2P';
+  background: black;
+  color:white;
+  padding: 5px;
+  border-radius: 4px;
+  border: 3px, solid, silver;
+}
+
+button:hover {
+  color: black;
+  background: white;
+}
+ol {
+    font-weight: bolder;
+}
+ol li {
+    font-weight: 1;
 }
 
 nav{
     margin: 20px;
     text-align: center;
+
 }
 
 ul {
     display: inline; 
+    font-family: 'Press Start 2P'
    }
 nav ul{
     margin:0px;
     padding:5px 0px 5px 30px;
     list-style-type: none;
 }
+nav ul a:visited {
+    text-decoration: none;
+  }
 
 nav li{
     display:inline-block;
-
     margin-right:40px;
 }
 
 nav li a{
-    color:#9a23be;
+    color: black
 }
 nav li a:hover,nav li a.current{
-    color:#000000;
+    color:white;
 }
-
+a:link {
+ text-decoration: none;
+}
