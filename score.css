@@ -1,50 +1,76 @@
+
 * {
     border:30px groove gray;
 }
 
+
 body{
-    background: lightblue url("Assets/blankscreenfixed.png");
-    background-repeat: no-repeat;
-    padding-right: 155px;
-   
-  }
+    background:linear-gradient(to right, #669999 20%, #00ffcc 92%);
+    
+}
+h1 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 30px;
+    text-align: center;
+    margin: 20px auto; 
+}
 
 section {
     display: absolute;
     text-align: center;
-    margin-top: -35px;
     line-height: 24px;
-    margin-right: 9em;
+    margin-top:20%;
+    margin: 20px auto;
     font-family: 'Press Start 2P', cursive;
-  }
+    z-index: 7;
+}
+
+img {
+    display: inline-block;
+    margin: 1px auto;
+    /* z-index: auto; */
+    width:100%;
+    align-content: center;
+}
 
 #play-button{
     position: relative;
     align-content: center;
-    margin-left:1100px;
-    margin-top: 400px;
-    border-radius: 50%;   
+    margin-left:660px;
+    margin-top: 740px;
+    align-content: center;
+    /* display: block;
+    margin: 10px auto;
+    font-size: 30px;
+    font-family: 'Press Start 2P';
+    background-color: #00ffcc; */
+    
 }
-  
 
 nav{
-    margin:100px 0px 10px 610px;
-  }
-  nav ul{
+    margin: 20px;
+    text-align: center;
+}
+
+ul {
+    display: inline;
+}
+nav ul{
     margin:0px;
     padding:5px 0px 5px 30px;
     list-style-type: none;
-  }
-  nav li{
-    font-size: 25px;
+}
+
+nav li{
     display:inline-block;
-    margin-left:525px;
-    line-height: 35px;
-  }
-  nav li a{
-    color:#002000;
-  }
-  nav li a:hover,nav li a.current{
+
+    margin-right:40px;
+}
+
+nav li a{
+    color:#9a23be;
+}
+nav li a:hover,nav li a.current{
     color:#000000;
-  }
+}
 
