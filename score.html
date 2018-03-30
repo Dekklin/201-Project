@@ -1,15 +1,40 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>score</title>
-    <link rel ="stylesheet" href ="reset.css">
-    <link rel ="stylesheet" href ="style.css">
-  </head>
-  <body>
-    <h1>results</h1>
-    <ul> </ul>
-  </body>
-  <footer>
-    
-  </footer>
+
+<head>
+  <title>score</title>
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="score.css">
+  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+</head>
+
+<body>
+
+  <h1>ScoreBoard!</h1>
+  <nav>
+    <ul>
+      <li>
+        <a href="index.html">Home</a>
+      </li>
+      <li>
+        <a href="about-us.html">About us</a>
+      </li>
+    </ul>
+  </nav>
+  <div id = "computer">
+  <img src="Assets/blankscreenfixed.png " alt="blankscreen">
+  <section>
+    <h1 id="displayName"></h1>
+    <h3 id="displayHighScore"></h3>
+    <ol id="displayAttempts">Top 3 Scores</ol>
+  </section>
+  <a id="play-button" href="game.html">
+    <button>Play Game Again!</button>
+  </a>
+</div>
+
+</body>
+<footer>
+</footer>
+<script src="score.js"></script>
 </html>

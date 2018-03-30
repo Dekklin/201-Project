@@ -1,25 +1,53 @@
 <!DOCTYPE html>
 
 <html> 
-<head>
-    <title> Game Name </title>
+  <head>
+    <title> Shapes </title>
     <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styleIndex.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+   
   </head>
+  
   <body>
-<h1>Game Name!!!!</h1>
+       
+    <h1>The Shape Game</h1>
+    <nav>
+      <ul>
+        <li><a href ="about-us.html">About us</a></li>
+        <li><a href ="#direction">Directions</a></li>
+        <li><a href ="score.html">Scores</a></li>
+      </ul>
+    </nav>
 
-<h3>Login</h3>
+    <img src ="Assets/basket.png">
 
-   
-     <img src="img/van-pic.png" alt="">
-     <h3>Directions :</h3>
-     <ul>
-         <li>1</li>
-         <li>2</li>
-         <li>3</li>
-     </ul>
-     <button>Play Game!</button>
-   
+    <section id = "direction">
+ 
+        <h3>Game Directions</h3>
+        
+        <ul>
+            <li>1. Click on a shape.</li>
+            <li>2. Pick the corresponding bucket.</li>
+            <li>3. Try as many as you can in 60 seconds.</li>
+            <br />
+            <li>Ready to play? Enter your name below to get started:</li>
+        </ul>
+       
+       </section>
+
+    <form id ="playerform">
+        <label for="name"></label>
+        <input type= "text" name= "name" placeholder="Your Name" required>
+        <button id =nameButton type="submit">Player Name</button>
+    </form>
+
+    <a id ="button" href = "game.html">
+        <button id = "playGameButton" class = 'hide-me'>Play Game</button></a>
+
+        <script src = "app.js"></script>
   </body>
+ 
 </html>
