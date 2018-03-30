@@ -21,9 +21,7 @@ function displayTime(){
         clearInterval(countDown);
     }
 }
-
 var countDown = setInterval(displayTime, 1000);
-
 
 function retrieveLocalStorage() {
     var playerDataString = localStorage.getItem('LocalPlayers');
@@ -47,25 +45,6 @@ function startGame() {
         timerEle.textContent = timer.toString();
     }
     setInterval(displayTime, 1000);
-
-
-    // function MyTimer(callback, val) {
-    //     val = val || 60;
-    //     var timer=setInterval(function() {
-    //         callback(val);
-    //         if(val-- <= 0) {
-    //             clearInterval(timer);
-    //         }
-    //     }, 1000);
-    // }
-    // new MyTimer(function(60) {
-    //     var timerMsg = '00:' + (val >= 10 ? val : '0' + val);
-    //     document.getElementById('displayTimer').textContent = timerMsg;
-    // });
-
-
-
-
 
     liElement.textContent = scoreCount;
 
@@ -129,7 +108,6 @@ function startGame() {
         console.log('fn random Num:' + i);
         console.log(sourceArray);
         return i;
-
     }
     var shapeArray = ['square', 'circle', 'triangle', 'diamond'];
     var sourceArray = ['Assets/square.png', 'Assets/circle.png', 'Assets/triangle.png', 'Assets/diamond.png'];
@@ -263,12 +241,11 @@ function saveData(){
     }
 
     currentPlayer.attempts ++;
-    window.location.href='score.html';
     var playerData = JSON.stringify(playerList);
     var currentPlayerData = JSON.stringify(currentPlayer);
     localStorage.setItem( 'LocalCurrentPlayer', currentPlayerData);
     localStorage.setItem( 'LocalPlayers', playerData);
-    window.location.href='score.html';
+    window.location.href= 'score.html';
 }
 
 setTimeout(startGame, 3000);
