@@ -1,6 +1,7 @@
 body{
   background:linear-gradient(to right, #669999 20%, #00ffcc 92%);
-  border:30px groove gray;
+  border:20px groove gray;
+  padding-bottom: 185px;
 }
 
 h1{
