@@ -48,6 +48,10 @@ function handleSubmit(event) {
     }
 
     savePlayerToLocalStorage();
+
+    // event listener on name button to call play game button
+    var gameButton = document.getElementById('playGameButton');
+    gameButton.setAttribute('class', 'show-me');
 }
 
 function savePlayerToLocalStorage() {

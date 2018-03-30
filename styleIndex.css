@@ -38,10 +38,11 @@ nav li a:hover,nav li a.current{
 }
 
 #playerform{
-  margin:50px;
+  margin:30px;
   text-align: center;
   font-size: 20px;
-  box-sizing: border-box
+  box-sizing: border-box;
+  font-family: 'Press Start 2P', cursive;
 }
 
 h3{
@@ -54,6 +55,28 @@ h3{
   line-height: 1.25em;
   text-align: center; 
   margin: 10px 0px;
+}
+
+.show-me {
+  display: block;
+  margin: 10px auto;
+  font-size: 30px;
+  font-family: 'Press Start 2P';
+  border: 1px solid black;
+  padding: 5px;
+}
+a:link {
+   text-decoration: none;
+ }
+
+ .show-me a:visited {
+   text-decoration: none;
+ }
+
+
+
+.hide-me {
+  display: none;
 }
 
 img{
@@ -80,3 +103,4 @@ img:hover {
   90% { transform: translate(1px, 2px) rotate(0deg); }
   100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
+
