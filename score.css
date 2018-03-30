@@ -1,6 +1,8 @@
-/* * {
-    border:5px double black;
-} */
+
+* {
+    border:30px groove gray;
+}
+
 
 body{
     background:linear-gradient(to right, #669999 20%, #00ffcc 92%);
@@ -61,13 +63,13 @@ nav ul{
 
 nav li{
     display:inline-block;
+
     margin-right:40px;
 }
 
 nav li a{
     color:#9a23be;
 }
-
 nav li a:hover,nav li a.current{
     color:#000000;
 }
