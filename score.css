@@ -36,6 +36,12 @@ section {
     align-content: center;
     
 }
+ol {
+    font-weight: bolder;
+}
+ol li {
+    font-weight: 1;
+}
 
 nav{
     margin: 20px;
@@ -53,7 +59,6 @@ nav ul{
 
 nav li{
     display:inline-block;
-
     margin-right:40px;
 }
 

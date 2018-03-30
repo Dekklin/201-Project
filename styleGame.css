@@ -54,6 +54,7 @@ height: 450px;
   position: fixed;
 }
 #score {
+  font-family: 'Press Start 2P', cursive;
   float:right;
   margin-right: -120px;
   text-align: center;
@@ -61,6 +62,8 @@ height: 450px;
   color: yellow; 
 }
 #displayTime {
+  font-family: 'Press Start 2P', cursive;
+
 color: red;
   font-size: 80px;
   float: left;

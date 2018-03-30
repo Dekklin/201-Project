@@ -16,11 +16,12 @@ function loadScore(){
     var displayName = document.getElementById('displayName');
     displayName.textContent = currentPlayer.name;
     var displayHS = document.getElementById('displayHighScore');
-    displayHS.textContent = currentPlayer.highScore;
+    displayHS.textContent = 'Highscore: ' + currentPlayer.highScore;
 
     for(var i in currentPlayer.recent){
         var attemptDisplay = document.createElement('li');
-        attemptDisplay.textContent = currentPlayer.recent[i];
+        var k = (parseInt(i)+1);
+        attemptDisplay.textContent = k + '. ' + currentPlayer.recent[i];
         orderAttempts.appendChild(attemptDisplay);
     }
 }
