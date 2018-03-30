@@ -32,9 +32,22 @@ section {
     position: absolute;
     top: 38%;
     left:43.5%;
-
-    align-content: center;
     
+    align-content: center;
+}
+
+button {
+  font-family: 'Press Start 2P';
+  background: black;
+  color:white;
+  padding: 5px;
+  border-radius: 4px;
+  border: 3px, solid, silver;
+}
+
+button:hover {
+  color: black;
+  background: white;
 }
 
 nav{
