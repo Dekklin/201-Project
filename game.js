@@ -246,7 +246,7 @@ function saveData(){
         currentPlayer.highScore = scoreCount;
     }
 
-    if(currentPlayer.recent.length >= 5){
+    if(currentPlayer.recent.length >= 4){
         currentPlayer.recent.pop();
     }
 
@@ -260,4 +260,4 @@ function saveData(){
 }
 
 setTimeout(startGame, 3000);
-setTimeout(saveData, 60000);
+setTimeout(saveData, 63000);
