@@ -12,19 +12,21 @@ body{
   height: 100%;
   padding-bottom: 115px;
  }
+ 
  section {
    height:100%;
  }
+
  section{
    display: block;
    justify-content: center;
    align-items: center;
    margin-left: 8%;
    list-style-type: none;
-   /* margin:0; */
    padding:0;
    position: relative
  }
+
  img{
   list-style-type: none;
   margin:0;
@@ -33,7 +35,6 @@ body{
   justify-content: center;
   align-items: center;
   margin: auto;
-  /* margin:600px 0px 10px 150px; */
   width:200px;
   padding-top:150px;
   margin:20px 20px 0px 50px
@@ -45,7 +46,6 @@ margin-left: auto;
 margin-right: auto;
 width: 900px;
 height: 450px;
-
 }
 
 #timer {
@@ -53,19 +53,20 @@ height: 450px;
   margin-left: -150px;
   position: fixed;
 }
+
 #score {
   font-family: 'Press Start 2P', cursive;
   float:right;
-  margin-right: -120px;
+  margin-right: -150px;
   text-align: center;
-  font-size: 80px;
+  font-size: 30px;
   color: yellow; 
 }
+
 #displayTime {
   font-family: 'Press Start 2P', cursive;
 
 color: red;
   font-size: 80px;
   float: left;
-
 }

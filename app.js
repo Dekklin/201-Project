@@ -21,7 +21,6 @@ function BuildPlayer (name) {
     this.recent = [];
     console.log('player created');
     playerList.push(this);
-    //currentPlayer = this;
 }
 
 function handleSubmit(event) {
@@ -54,6 +53,5 @@ function savePlayerToLocalStorage() {
     localStorage.setItem( 'LocalPlayers', playerData);
 }
 onLoad();
-console.log(currentPlayer);
 
 

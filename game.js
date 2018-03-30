@@ -12,8 +12,6 @@ var currentPlayer = null;
 var playerList = null;
 var liElement = document.getElementById('score');
 
-
-
 function displayTime(){
     timer --;
     timerEle.textContent = timer.toString();
@@ -24,7 +22,6 @@ function displayTime(){
 
 var countDown = setInterval(displayTime, 1000);
 
-
 function retrieveLocalStorage() {
     var playerDataString = localStorage.getItem('LocalPlayers');
     var currentPlayerDataString = localStorage.getItem('LocalCurrentPlayer');
@@ -34,9 +31,8 @@ function retrieveLocalStorage() {
 
     var retrievedPlayer = JSON.parse(playerDataString);
     playerList = retrievedPlayer;
-
-    console.log('retrieved player list: ' + playerList);
 }
+
 retrieveLocalStorage();
 
 
@@ -50,7 +46,6 @@ function startGame() {
 
     liElement.textContent = scoreCount;
 
-
     // random shape function
     function randomShapes() {
         var randomShapeSelector = ['square','circle','diamond','triangle'];
@@ -63,7 +58,6 @@ function startGame() {
         var randomColorSelector = ['red','yellow','blue','green'];
         var k = Math.floor(Math.random()*randomColorSelector.length);
         return randomColorSelector[k];
-
     }
 
     // random number generator for X axis
@@ -88,44 +82,29 @@ function startGame() {
         shapes.push(this);
     }
 
-
-
     function clickedOnShape(event) {
         for(var i in shapes){
             if(((event.offsetX/3)>= shapes[i].x-2) && ((event.offsetX/3) <= shapes[i].x+21) && ((event.offsetY/3) >= shapes[i].y-8) && ((event.offsetY/3) <= shapes[i].y+23)){
-                console.log('got it');
                 currentSelected = shapes[i];
                 currentSelectedIndex = i;
-
-                console.log(currentSelected);
             }
         }
-
     }
     canvas.addEventListener('click', clickedOnShape);
 
-
     function randomBucketShape() {
         var i = Math.floor(Math.random()*shapeArray.length);
-        console.log('fn random Num:' + i);
-        console.log(sourceArray);
         return i;
-
     }
+
     var shapeArray = ['square', 'circle', 'triangle', 'diamond'];
     var sourceArray = ['Assets/square.png', 'Assets/circle.png', 'Assets/triangle.png', 'Assets/diamond.png'];
-    // if (shapeArray === []){
-    //     shapeArray = ['square', 'circle', 'triangle', 'diamond'];
-    //     sourceArray = ['Assets/square.png', 'Assets/circle.png', 'Assets/triangle.png', 'Assets/diamond.png'];
-    // }
 
     Bucket.bucketArray = [];
 
     function Bucket() {
         var randomNumber = randomBucketShape();
-        // console.log('bucket Num: ' + randomNumber);
         this.shape = shapeArray[randomNumber],
-        // this.color = colorArray[randomNumber],
         this.src = sourceArray[randomNumber],
         sourceArray.splice(randomNumber,1);
         shapeArray.splice(randomNumber,1);
@@ -146,20 +125,16 @@ function startGame() {
     basket2.src = Bucket.bucketArray[2].src;
     basket3.src = Bucket.bucketArray[3].src;
 
-
     basket0.addEventListener('click',clickBucketHandler);
     basket1.addEventListener('click',clickBucketHandler);
     basket2.addEventListener('click',clickBucketHandler);
     basket3.addEventListener('click',clickBucketHandler);
 
-
     function clickBucketHandler(event){
-        console.log(event.target.id);
         var i = event.target.id.slice(-1);
         if(currentSelected.shape === Bucket.bucketArray[i].shape){
             shapes.splice(currentSelectedIndex, 1);
             currentSelected = null;
-            console.log('congrats');
             shapeCanvas.clearRect(0,0,900,450);
             for (var j in shapes){
                 shapes[j].drawShape();
@@ -167,13 +142,9 @@ function startGame() {
             scoreCount = scoreCount + 100;
             liElement.textContent = scoreCount;
         }
-
     }
 
-
     Shape.prototype.drawShape = function(){
-
-        // var shapeCanvas = canvas.getContext('2d');
 
         if (this.shape === 'square') {
             shapeCanvas.fillStyle = this.color;
@@ -194,7 +165,6 @@ function startGame() {
             shapeCanvas.lineTo(this.x + 10, this.y + 23);
             shapeCanvas.lineTo(this.x + 20, this.y + 8);
             shapeCanvas.lineTo(this.x + 10, this.y - 7);
-            // shapeCanvas.stroke();
             shapeCanvas.fill();
         }
         else if (this.shape === 'circle') {
@@ -202,7 +172,6 @@ function startGame() {
             shapeCanvas.fillStyle = this.color;
             shapeCanvas.beginPath();
             shapeCanvas.arc(this.x, this.y, 10, 0, 2* Math.PI);
-            // shapeCanvas.stroke();
             shapeCanvas.fill();
         }
     };
