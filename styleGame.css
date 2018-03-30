@@ -8,9 +8,24 @@ body{
   border-right:10em solid rgb(19, 2, 2);
  
  }
- 
+ section{
+   display: block;
+   justify-content: center;
+   align-items: center;
+   margin-left: 8%;
+   list-style-type: none;
+   /* margin:0; */
+   padding:0;
+   position: relative
+ }
  img{
+  list-style-type: none;
+  margin:0;
+  padding:0;
   position: relative;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
   /* margin:600px 0px 10px 150px; */
   width:200px;
   padding-top:150px;
@@ -18,8 +33,9 @@ body{
 }
 
 canvas {
-margin: auto;
-padding: auto;
+  display: block;
+margin-left: auto;
+margin-right: auto;
 width: 900px;
 height: 450px;
 border: 1px solid black;
@@ -32,11 +48,8 @@ border: 1px solid black;
 
 #score {
   float:right;
-  margin-top: -1250px;
-  margin-right: -100px;
+  margin-right: -120px;
   text-align: center;
-  width: 50px;
-  height: 50px;
   font-size: 80px;
   color: yellow;
   

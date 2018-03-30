@@ -1,6 +1,6 @@
 'use strict';
 // global variables
-var timer = 60;
+var timer = 3;
 var timerEle = document.getElementById('displayTime');
 var canvas = document.getElementById('shape');
 var shapeCanvas = canvas.getContext('2d');
@@ -11,7 +11,20 @@ var currentSelectedIndex = null;
 var currentPlayer = null;
 var playerList = null;
 var liElement = document.getElementById('score');
-//var timeElement = document.getElementById('displayTime');
+
+
+
+function displayTime(){
+    timer --;
+    timerEle.textContent = timer.toString();
+    if(timer === 0){
+        clearInterval(countDown);
+    }
+}
+
+var countDown = setInterval(displayTime, 1000);
+
+
 function retrieveLocalStorage() {
     var playerDataString = localStorage.getItem('LocalPlayers');
     var currentPlayerDataString = localStorage.getItem('LocalCurrentPlayer');
@@ -28,7 +41,7 @@ retrieveLocalStorage();
 
 
 function startGame() {
-
+    timer = 60;
     function displayTime(){
         timer --;
         timerEle.textContent = timer.toString();
@@ -246,5 +259,5 @@ function saveData(){
     window.location.href='score.html';
 }
 
-setTimeout(startGame, 500);
-setTimeout(saveData, 100000);
+setTimeout(startGame, 3000);
+setTimeout(saveData, 60000);
